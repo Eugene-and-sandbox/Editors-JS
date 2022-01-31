@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Text settings -->
+        <div id="textSettings">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 editors-styles">
+                <!-- Text showing block -->
+                <div id="showText">
+                  <h3>Header text</h3>
+                  <p>Example text</p>
+                  <p>Example text</p>
+                  <p>Example text</p>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3">
+              <div class="col-md-12">
+                <!-- Show text editor or style editor -->
+                <button type="submit" class="btn btn-warning" id="editBtn">Edit</button>
+                <button type="submit" class="btn btn-info" id="styleBtn">Style</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 editors-styles">
+                <!-- Text editor -->
+                <div id="textEditorWrapper">
+                  <div id="textEditor" contenteditable="true"></div>
+                  <div class="mt-2 mb-2">
+                    <button type="submit" class="btn btn-danger" id="addBtn" onmousedown="newTableVarioantsShowing()">Add</button>
+                    <button type="submit" class="btn btn-success" id="saveBtn">Save</button>
+                  </div>
+                </div>
+
+                <!-- Style editor -->
+                <div id="textStyleWrapper">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p><strong>Font Size:</strong></p>
+                        <div id="showRadioBtn"></div>
+
+                        <p class="mt-2"><strong>Font Family:</strong></p>
+                        <div id="showFFdropdown"></div>
+
+                        <p class="mt-2"><strong>Colors:</strong></p>
+                        <button type="submit" class="btn btn-secondary" id="textColorBtn">Color of text</button>
+                        <button type="submit" class="btn btn-secondary" id="bgColorBtn">Background color</button>
+
+                        <p class="mt-2"><strong>Font Weight:</strong></p>
+                        <div id="showFontStyleChekbox"></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div id="setTextColorWrapper" style="margin-top: 11rem" class="text-color-picker-showing"></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div id="setBgColorWrapper" style="margin-top: 11rem" class="text-color-picker-showing"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Create new table -->
+        <div id="newTableSettings">
+          <div class="selection-of-the-table-styles" id="selectCurentTableSettingsWindow">
+            <div id="newTableTitleText"></div>
+            <div id="curentTibleSelection"></div>
+            <form action="">
+              <div id="curentTableViewer"></div>
+            </form>
+            <!-- <div class="text-color-picker-showing" id="showTableCreationForm">
+              <form action="">
+                <button type="submit" class="btn btn-success">Create table</button>
+              </form>
+            </div>
+            <div class="text-color-picker-showing" id="showListCreationForm">
+              <form action="">
+                <button type="submit" class="btn btn-success">Create list</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+
+  <!-- Local scripts -->
+  <script src="js/main_panels_showing.js" charset="utf-8"></script>
+  <script src="js/table/opening-the-table-window.js" charset="utf-8"></script>
+  <script src="js/font_size.js" charset="utf-8"></script>
+  <script src="js/font_family.js" charset="utf-8"></script>
+  <script src="js/color_picker.js" charset="utf-8"></script>
+  <script src="js/font_styles.js" charset="utf-8"></script>
+  <script src="js/table/tables-creator.js" charset="utf-8"></script>
+</body>
+
+</html>

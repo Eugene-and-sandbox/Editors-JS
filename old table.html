@@ -1,0 +1,73 @@
+<div id="createNewTable">
+  <h3>Choose what you want</h3>
+  <div id="makeChoice"></div>
+  <div id="TableOrList"></div>
+  <!-- When choosing a table -->
+  <form action="" id="tableSelection" onclick="event.preventDefault()">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <p>Count TR: </p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="countOfTR" placeholder="Count TR:" value="">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-4">
+          <p>Count TD: </p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="countOfTD" placeholder="Count TD:" value="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5><strong>Add style to your table:</strong></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <p>Width of TD: </p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form-control" placeholder="Width of TD:">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-4">
+          <p>Height of TD: </p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form-control" placeholder="Height of TD:">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-2">With of border:</div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Width:">
+        </div>
+        <div class="col-md-2">Type of border:</div>
+        <div class="col-md-2">
+          <select class="dropdown">
+            <option value="solid" class="dropdown-item">solid</option>
+            <option value="dotted" class="dropdown-item">dotted</option>
+            <option value="dashed" class="dropdown-item">dashed</option>
+            <option value="double" class="dropdown-item">double</option>
+          </select>
+        </div>
+        <div class="col-md-2">Color of border:</div>
+        <div class="col-md-2">
+          <select class="dropdown">
+            <option value="#212121" class="dropdown-item">Dark Grey</option>
+            <option value="#3e2723" class="dropdown-item">Dark Brown</option>
+            <option value="#bf360c" class="dropdown-item">Deep Orange</option>
+            <option value="#ff6f00" class="dropdown-item">Orange</option>
+            <option value="#1b5e20" class="dropdown-item">Green</option>
+            <option value="#2196f3" class="dropdown-item">Light Blue</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" name="button" class="btn btn-success mt-2" id="createTableBtn">Create table</button>
+    </div>
+  </form>
