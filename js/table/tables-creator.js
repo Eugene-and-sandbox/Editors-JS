@@ -59,7 +59,7 @@ function createCurentTable(event) {
       newTableTd.style.height = heightTdInput + 'px'
       newTableTd.style.textAlign = 'center'
       newTableTd.style.verticalAlign = 'middle'
-      newTableTd.style.border = widthOfBorderInput + 'px ' + colorOfBorderSelect
+      newTableTd.style.border = widthOfBorderInput + 'px ' + typeOfBorderSelect + ' ' + colorOfBorderSelect
       // + typeOfBorderSelect + ' '
       newTableTd.innerText = 'TD'
 
@@ -79,7 +79,7 @@ function createCurentTable(event) {
 
 
 // Table values creater and collector
-function ValueForTableCreator(border, tableBorderStyle) {
+function ValueForTableCreator(tableBorderStyle) {
   const tableConstructorDiv = document.createElement('div'),
         countTr = document.createElement('span'),
         countTd = document.createElement('span'),
@@ -93,9 +93,7 @@ function ValueForTableCreator(border, tableBorderStyle) {
         widthOfBorder = document.createElement('span'),
         widthOfBorderInput = document.createElement('input'),
         typeOfBorderOption = document.createElement('option'),
-        typeOfBorderSpan = document.createElement('span'),
-        colorOfBorderOption = document.createElement('option'),
-        colorOfBorderSpan = document.createElement('span')
+        typeOfBorderSpan = document.createElement('span')
 
   countTr.innerText = 'Count TR:'
   countTd.innerText = 'Count TD:'
@@ -134,22 +132,24 @@ function ValueForTableCreator(border, tableBorderStyle) {
   widthOfBorderInput.classList.add('form-control')
   widthOfBorderInput.placeholder = 'Width of border:'
 
-  colorOfBorderSelect.id = 'colorOfBorderSelectId'
-
-  colorOfBorderOption.innerText = border
-  colorOfBorderOption.classList.add('dropdown-item')
-  colorOfBorderOption.style.color = 'black'
-  colorOfBorderOption.style.backgroundColor = border
-
-  colorOfBorderSpan.innerText = 'Color of border:'
-  colorOfBorderSelect.id = 'colorOfBorderSelectId'
-
   typeOfBorderSpan.innerText = 'Type of border:'
   typeOfBorderSelect.id = 'colorOfBorderSelectId'
 
-  typeOfBorderOption.innerText = border
+  typeOfBorderOption.innerText = tableBorderStyle
   typeOfBorderOption.classList.add('dropdown-item')
   typeOfBorderOption.id = 'typeOfBorderSelectId'
+
+  colorOfBorderOption = document.createElement('option'),
+  colorOfBorderSpan = document.createElement('span')
+
+  colorOfBorderSelect.id = 'colorOfBorderSelectId'
+
+  colorOfBorderOption.innerText = tableBorderStyle
+  colorOfBorderOption.classList.add('dropdown-item')
+  // colorOfBorderOption.style.color = 'black'
+  colorOfBorderOption.style.backgroundColor = tableBorderStyle
+
+  colorOfBorderSpan.innerText = 'Color of border:'
 
   createTableBtn.innerText = 'Create Table'
 
@@ -181,12 +181,35 @@ function ValueForTableCreator(border, tableBorderStyle) {
   return countTrInput
 }
 
+
+function tableBorderColorStyleFunction(borderColor) {
+  const tableBorderColorDiv = document.createElement('div')
+
+  colorOfBorderOption = document.createElement('option'),
+  colorOfBorderSpan = document.createElement('span')
+
+  colorOfBorderSelect.id = 'colorOfBorderSelectId'
+
+  colorOfBorderOption.innerText = borderColor
+  colorOfBorderOption.classList.add('dropdown-item')
+  colorOfBorderOption.style.color = 'black'
+  colorOfBorderOption.style.backgroundColor = borderColor
+
+  colorOfBorderSpan.innerText = 'Color of border:'
+
+  curentTableViewer.appendChild(tableBorderColorDiv)
+  tableBorderColorDiv.appendChild(colorOfBorderSelect)
+  colorOfBorderSelect.appendChild(colorOfBorderOption)
+}
+
+
 tableBorderStyle.forEach(tableBorderStyle => {
   ValueForTableCreator(tableBorderStyle)
 })
 
+
 tableBorderColorPicker.forEach(borderColor => {
-  ValueForTableCreator(borderColor)
+  tableBorderColorStyleFunction(borderColor)
 })
 
 // List creator
