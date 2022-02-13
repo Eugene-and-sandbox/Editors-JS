@@ -25,16 +25,16 @@
               <!-- Text style buttons -->
               <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" id="boldTextBtn">
                     <i class="bi bi-type-bold"></i>
                   </button>
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" id="italicTextBtn">
                     <i class="bi bi-type-italic"></i>
                   </button>
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" id="underlineTextBtn">
                     <i class="bi bi-type-underline"></i>
                   </button>
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" id="strikethroughTextBtn">
                     <i class="bi bi-type-strikethrough"></i>
                   </button>
                 </div>
@@ -43,13 +43,13 @@
             <div class="col">
               <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" value="bold" id="textLeftBtn">
                     <i class="bi bi-text-left"></i>
                   </button>
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" id="textCenterBtn">
                     <i class="bi bi-text-center"></i>
                   </button>
-                  <button type="button" class="btn style-control-buttons">
+                  <button type="button" class="btn style-control-buttons" id="textRightBtn">
                     <i class="bi bi-text-right"></i>
                   </button>
                 </div>
@@ -71,7 +71,7 @@
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="fontSizeGroup">
                   </div>
                 </div>
-                <button type="button" class="btn style-control-buttons">
+                <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#staticBackdrop">
                   <i class="bi bi-palette-fill"></i>
                 </button>
                 <button type="button" class="btn style-control-buttons">
@@ -80,7 +80,7 @@
               </div>
             </div>
             <div class="col">
-              <button type="button" class="btn style-control-buttons">
+              <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
                 <i class="bi bi-lock-fill"></i>
               </button>
             </div>
@@ -138,10 +138,65 @@
   <div id="cteateTAbleModule"></div>
 
 
+  <!-- MODALS -->
+  <!-- Color Picker, Image and Files Modal -->
+  <!-- Button trigger modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Login Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="userName" placeholder="Login Here..">
+            </div>
+            <div class=" form-group">
+              <input type="password" class="form-control" id="userPassword" value="" placeholder="Password here..">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
   <script src="js/main-window-visualization.js" charset="utf-8"></script>
+  <script src="js/bootstrap-validate.js"></script>
+  <script src="js/bootstrapCustomValidation.js" charset="utf-8"></script>
   <script src="js/textStyleAndTextPositionFunctions.js" charset="utf-8"></script>
+  <script src="js/text-settings.js" charset="utf-8"></script>
 </body>
 
 </html>
