@@ -1,58 +1,90 @@
-// Buttons Collection Wrappers
-const textStyleBntsWrapper = document.createElement('div'),
-      textPositionBtnsWrapper = document.createElement('div')
+const fontFamilyGroup = document.querySelector('#fontFamilyGroup'),
+      fontSizeGroup = document.querySelector('#fontSizeGroup'),
+      fontFamilyItemsGroup = [
+  'Arial', 'Geirgia', 'Impact', 'Tahoma',
+  'Times New Roman', 'Verdana'
+],
+      fontSizeItemsGroup = [
+        '12px', '14px', '16px', '18px',
+        '20px', '22px', '25px', '30px'
+      ]
 
 
-// Buttons Collection Wrappers Styles
-textStyleBntsWrapper.className = 'buttons-collection-wrappers-styles ml-2'
-textPositionBtnsWrapper.className = 'buttons-collection-wrappers-styles ml-2'
+// Font Family Items Dropdown
+function fontFamilyViewerFunction(fontFamily) {
+  const fontFamilyItemBtn = document.createElement('a')
+
+  fontFamilyItemBtn.classList.add('dropdown-item')
+  fontFamilyItemBtn.innerText = fontFamily
+  switch(fontFamily){
+    case('Arial'):
+      fontFamilyItemBtn.style.fontFamily = 'Arial'
+      break
+    case('Geirgia'):
+      fontFamilyItemBtn.style.fontFamily = 'Geirgia'
+      break
+    case('Impact'):
+      fontFamilyItemBtn.style.fontFamily = 'Impact'
+      break
+    case('Tahoma'):
+      fontFamilyItemBtn.style.fontFamily = 'Tahoma'
+      break
+    case('Times New Roman'):
+      fontFamilyItemBtn.style.fontFamily = 'Times New Roman'
+      break
+    case('Verdana'):
+      fontFamilyItemBtn.style.fontFamily = 'Verdana'
+      break
+  }
+  fontFamilyItemBtn.setAttribute('fontFamilyAttributeValue', fontFamily)
 
 
-// Text Style Buttons
-const boldStyleBtn = document.createElement('input'),
-      italicStyleBtn = document.createElement('input'),
-      underlineStyleBtn = document.createElement('input')
+  return fontFamilyItemBtn
+}
+
+fontFamilyItemsGroup.forEach(fontFamily => {
+  fontFamilyGroup.appendChild(fontFamilyViewerFunction(fontFamily))
+})
 
 
-// Text Position buttons
-const textAlignLeftBtn = document.createElement('input'),
-      textAlignCenterBtn = document.createElement('input'),
-      textAlignRightBtn = document.createElement('input')
+// Font Size Items Dropdown
+function fontSizeItemsViewrFunction(fontSize) {
+  const fontSizeItemBtn = document.createElement('a')
+
+  fontSizeItemBtn.classList.add('dropdown-item')
+  fontSizeItemBtn.innerText = fontSize
+  switch(fontSize){
+    case('12px'):
+      fontSizeItemBtn.style.fontSize = '12px'
+      break
+    case('14px'):
+      fontSizeItemBtn.style.fontSize = '14px'
+      break
+    case('16px'):
+      fontSizeItemBtn.style.fontSize = '16px'
+      break
+    case('18px'):
+      fontSizeItemBtn.style.fontSize = '18px'
+      break
+    case('20px'):
+      fontSizeItemBtn.style.fontSize = '20px'
+      break
+    case('22px'):
+      fontSizeItemBtn.style.fontSize = '22px'
+      break
+    case('25px'):
+      fontSizeItemBtn.style.fontSize = '25px'
+      break
+    case('30px'):
+      fontSizeItemBtn.style.fontSize = '30px'
+      break
+  }
+  fontSizeItemBtn.setAttribute('fontFamilyAttributeValue', fontSize)
 
 
-// Other Buttons
-const addHryvniaSymbolBtn = document.createElement('input')
+  return fontSizeItemBtn
+}
 
-//Oter Buttons Styles
-addHryvniaSymbolBtn.type = 'button'
-addHryvniaSymbolBtn.id = 'addHrivnaSymbolBtn'
-addHryvniaSymbolBtn.value = '₴'
-addHryvniaSymbolBtn.classList.add('buttons-style-styles')
-
-
-// Buttons styles
-// Text Style Buttons
-boldStyleBtn.type = 'button'
-boldStyleBtn.id = 'boldStyleBtn'
-boldStyleBtn.value = 'B'
-boldStyleBtn.classList.add('buttons-style-styles')
-
-italicStyleBtn.type = 'button'
-italicStyleBtn.id = 'italicStyleBtn'
-italicStyleBtn.value = 'I'
-italicStyleBtn.classList.add('buttons-style-styles')
-
-underlineStyleBtn.type = 'button'
-underlineStyleBtn.id = 'underlineStyleBtn'
-underlineStyleBtn.value = 'U'
-underlineStyleBtn.style.fontStyle = 'underline'
-underlineStyleBtn.classList.add('buttons-style-styles')
-
-
-// Buttons hierarhy
-// textEditorPanel.
-textStylePanel.appendChild(textStyleBntsWrapper)
-textStyleBntsWrapper.appendChild(boldStyleBtn)
-textStyleBntsWrapper.appendChild(italicStyleBtn)
-textStyleBntsWrapper.appendChild(underlineStyleBtn)
-textStyleBntsWrapper.appendChild(addHryvniaSymbolBtn)
+fontSizeItemsGroup.forEach(fontSize => {
+  fontSizeGroup.appendChild(fontSizeItemsViewrFunction(fontSize))
+})

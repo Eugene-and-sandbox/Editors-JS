@@ -1,27 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main-styles.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" id="textStylePanel">
+  <!-- Main text control panel -->
+  <div class="container text-styles-container">
+    <div class="row justify-content-center">
+      <div class="col-md-10" id="textStylePanel">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div id="switchTextViewerOnTextEditor"></div>
+            </div>
+            <div class="col">
+              <!-- Text style buttons -->
+              <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-type-bold"></i>
+                  </button>
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-type-italic"></i>
+                  </button>
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-type-underline"></i>
+                  </button>
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-type-strikethrough"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-text-left"></i>
+                  </button>
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-text-center"></i>
+                  </button>
+                  <button type="button" class="btn style-control-buttons">
+                    <i class="bi bi-text-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle style-control-buttons" data-toggle="dropdown" aria-expanded="false">
+                    A
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="fontFamilyGroup">
+                  </div>
+                </div>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle style-control-buttons" data-toggle="dropdown" aria-expanded="false">
+                    T
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="fontSizeGroup">
+                  </div>
+                </div>
+                <button type="button" class="btn style-control-buttons">
+                  <i class="bi bi-palette-fill"></i>
+                </button>
+                <button type="button" class="btn style-control-buttons">
+                  <i class="bi bi-image-fill"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <button type="button" class="btn style-control-buttons">
+                <i class="bi bi-lock-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-12" id="textEditorPanel"></div>
     </div>
-    <div class="row" id="textShowingBlock">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
+  </div>
+
+  <!-- Text viewer -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div style="background: white" class="text-viewer-styles mt-3 mb-3" id="textShowingBlock">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque est et consequat lacinia.</p>
+        </div>
+      </div>
     </div>
-    <div class="row" id="textEditorBlock" contenteditable="true"></div>
+  </div>
+
+  <!-- Elements Creation Panel -->
+  <div class="container text-styles-container" id="textEditorPanel">
+    <div class="row justify-content-center">
+      <div class="col-md-2">
+        <div class="btn-toolbar mb-3 mt-1" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn style-control-buttons" id="saveTextChangesBtn">
+              <img src="https://cdn1.iconfinder.com/data/icons/computer-hardware-and-accessories-glyph-style/320/disket-512.png" width="20" alt="">
+            </button>
+            <button type="button" class="btn style-control-buttons">
+              <i class="bi bi-table"></i>
+            </button>
+            <button type="button" class="btn style-control-buttons">
+              <i class="bi bi-list-ol"></i>
+            </button>
+            <button type="button" class="btn style-control-buttons">
+              <i class="bi bi-list-ul"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text editor -->
+  <div class="container">
+    <div class="row text-viewer-styles mt-3 mb-3" id="textEditorBlock" contenteditable="true">
+    </div>
   </div>
 
   <!-- Create Table Module -->
@@ -33,4 +143,5 @@
   <script src="js/main-window-visualization.js" charset="utf-8"></script>
   <script src="js/textStyleAndTextPositionFunctions.js" charset="utf-8"></script>
 </body>
+
 </html>
