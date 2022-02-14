@@ -20,6 +20,39 @@ html body {
   box-shadow: -.1rem .1rem .8rem .3rem rgba(0, 0, 0, .2);
 }
 
+/* Text style toggle */
+.text-bold {
+  font-weight: bold;
+}
+
+.text-bold-toggle {
+  font-weight: none;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-italic-toggle {
+  font-style: normal;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-underline-toggle {
+  text-decoration: none;
+}
+
+.text-strikethrough {
+  text-decoration: line-through;
+}
+
+.text-strikethrough-toggle {
+  text-decoration: none;
+}
+
 /* Buttons Styles */
 /* .buttons-collection-wrappers-styles {
   width: 15%;
@@ -50,4 +83,26 @@ html body {
   border: .1rem solid #455a64;
   background: #EFEFEF;
   color: #455a64;
+}
+
+/* Color Picker Styles */
+.cells-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.color-picker-cell {
+  width: 3.8rem;
+  height: 3.8rem;
+}
+
+.br-0-3 {
+  border-radius: .3rem;
+}
+
+/* BAckground Images Cells Styles */
+.bacground-image.cell {
+  width: 10rem;
+  height: 3rem;
 }
