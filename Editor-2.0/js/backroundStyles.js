@@ -15,6 +15,7 @@ const colorPicker = [
 
 
 function onClickOnColorPickerCell(event) {
+  textShowingBlock.style.backgroundImage = 'none'
   textShowingBlock.style.backgroundColor = event.target.value
 }
 
@@ -53,7 +54,6 @@ const backgroundImages = [
 
 
 function onClickOnBackgroundImageCell(event) {
-  const imageUrl = '"' + event.target.src + '"'
   textShowingBlock.style.backgroundImage = 'url("' + event.target.src + '")'
   console.log(textShowingBlock)
 }
