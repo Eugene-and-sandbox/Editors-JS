@@ -1,1 +1,5 @@
-2. Bold працює, а решта - ні
+1. Bold працює, а решта - ні
+2. Color Picker перестав завантажуватись одразу
+3. Image Picker може завантадити одрайзу й Color Picker
+4. Як бутсраповські div, а чи li змусити працювати, яу select та option?
+5. "Criate UI" and "Create table" modals don`t hide after table crating as "Create Ol"

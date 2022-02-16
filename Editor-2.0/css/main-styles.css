@@ -101,8 +101,18 @@ html body {
   border-radius: .3rem;
 }
 
-/* BAckground Images Cells Styles */
+/* Background Images Cells Styles */
 .bacground-image.cell {
   width: 10rem;
   height: 3rem;
+}
+
+/* Table styles */
+.trasparent-button,
+.trasparent-button:hover,
+.trasparent-button:link,
+.trasparent-button:visited,
+.trasparent-button:active {
+  background: transparent;
+  color: black;
 }
