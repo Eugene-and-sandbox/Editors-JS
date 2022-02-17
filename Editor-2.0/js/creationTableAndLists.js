@@ -1,15 +1,44 @@
 // Create table
-const tableCreationForm = document.querySelector('#tableCreationForm'),
-      olCreationForm = document.querySelector('#olCreationForm'),
-      ulCreationForm = document.querySelector('#ulCreationForm')
+const tableCreationForm = document.querySelector('#tableCreationForm')
 
 
 const resetTableCreationFormBtn = document.querySelector('#resetTableCreationFormBtn'),
-      creteTableBtn = document.querySelector('#creteTableBtn'),
-      closeTableModal = document.querySelector('#closeTableModal')
+  creteTableBtn = document.querySelector('#creteTableBtn'),
+  closeTableModal = document.querySelector('#closeTableModal')
 
 
 function createTableFunction() {
+  const tableTrCount = document.querySelector('#tableTrCount').value,
+    tableTdCount = document.querySelector('#tableTdCount').value,
+    tableTdWidth = document.querySelector('#tableTdWidth').value,
+    tableTdHeight = document.querySelector('#tableTdHeight').value,
+    tableBorderWidth = document.querySelector('#tableBorderWidth').value,
+    styleOfBorderDropdown = document.querySelector('#styleOfBorderDropdown').value,
+    styleOfBorderColorDropdown = document.querySelector('#styleOfBorderColorDropdown').value
+
+  const tableWrapper = document.createElement('table')
+  for (let i = 0; i < tableTrCount; i++) {
+    const trItem = document.createElement('tr')
+
+    for (let j = 0; j < tableTdCount; j++) {
+      const tdItem = document.createElement('td')
+
+      tdItem.style.padding = '.2rem .2rem .2rem'
+      tdItem.style.width = tableTdWidth + 'px'
+      tdItem.style.height = tableTdHeight + 'px'
+      tdItem.style.border = tableBorderWidth + 'px' + ' ' + styleOfBorderDropdown + ' ' + styleOfBorderColorDropdown
+      tdItem.innerText = 'TD'
+
+      trItem.appendChild(tdItem)
+    }
+
+    tableWrapper.appendChild(trItem)
+  }
+
+  textShowingBlock.appendChild(tableWrapper)
+
+
+
   closeTableModal.classList.add('close')
   closeTableModal.dataset.dismiss = 'modal'
   textShowingBlock.style.display = 'block'
@@ -23,30 +52,29 @@ creteTableBtn.addEventListener('click', createTableFunction)
 
 
 // Create Ol
-const resetOlCreationFormBtn = document.querySelector('#resetOlCreationFormBtn'),
-      creteOlBtn = document.querySelector('#creteOlBtn')
+const olCreationForm = document.querySelector('#olCreationForm'),
+  resetOlCreationFormBtn = document.querySelector('#resetOlCreationFormBtn'),
+  creteOlBtn = document.querySelector('#creteOlBtn')
 
+const closeModalOl = document.querySelector('#closeModalOl')
 
-const listLiCount = document.querySelector('#listLiCount').value,
-      modalContent = document.querySelector('.modal-content'),
-      closeModalOl = document.querySelector('#closeModalOl')
-
-const olWrapper = document.createElement('ol'),
-      liItem = document.createElement('li')
-
-
-function onClickByTypeOfMark(event) {
-  textShowingBlock.appendChild(olWrapper)
-  liItem.innerText = 'Lorem, example text for list'
-  liItem.style.listStyleType = event.target.value
-  for(let i = 0; i < listLiCount.length; i++) {
-    console.log(olWrapper.appendChild(liItem))
-  }
-}
+const olWrapper = document.createElement('ol')
 
 
 function listOlCreatingFunction() {
-  const styleTypeOfMarksListDropdown = document.querySelector('#styleTypeOfMarksListDropdown')
+  const styleTypeOfOlMarksListDropdown = document.querySelector('#styleTypeOfOlMarksListDropdown').value,
+    listLiCount = document.querySelector('#listLiCount').value
+
+  textShowingBlock.appendChild(olWrapper)
+
+  for (let i = 0; i < listLiCount; i++) {
+    const liItem = document.createElement('li')
+
+    liItem.innerText = 'Lorem, example text for list'
+    liItem.style.listStyleType = styleTypeOfOlMarksListDropdown
+
+    olWrapper.appendChild(liItem)
+  }
 
   closeModalOl.classList.add('close')
   closeModalOl.dataset.dismiss = 'modal'
@@ -54,27 +82,34 @@ function listOlCreatingFunction() {
   textStylePanel.style.display = 'block'
   textEditorBlock.style.display = 'none'
   textEditorPanel.style.display = 'none'
-
-  styleTypeOfMarksListDropdown.addEventListener('change', onClickByOlTypeOfMark)
 }
 
 creteOlBtn.addEventListener('click', listOlCreatingFunction)
 
 
 // Create Ul
-const resetUlCreationFormBtn = document.querySelector('#resetOlCreationFormBtn'),
-      createUlBtn = document.querySelector('#createUlBtn'),
-      closeModalUl = document.querySelector('#closeModalUl')
+const ulCreationForm = document.querySelector('#ulCreationForm'),
+  resetUlCreationFormBtn = document.querySelector('#resetUlCreationFormBtn'),
+  creteUlBtn = document.querySelector('#creteUlBtn')
 
-const ulWrapper = document.createElement('ul'),
-      ulLiItem = document.createElement('li')
+const closeModalUl = document.querySelector('#closeModalUl')
 
-function onClickByUlTypeOfMark(event) {
-
-}
+const ulWrapper = document.createElement('ul')
 
 function listUlCreatingFunction(event) {
-  const styleTypeOfUlMarksListDropdown = document.querySelector('#styleTypeOfUlMarksListDropdown')
+  const styleTypeOfUlMarksListDropdown = document.querySelector('#styleTypeOfUlMarksListDropdown').value,
+    countOfLiItems = document.querySelector('#countOfLiItems').value
+
+  textShowingBlock.appendChild(ulWrapper)
+
+  for (let i = 0; i < countOfLiItems; i++) {
+    const liItem = document.createElement('li')
+
+    liItem.innerText = 'Lorem, example text for list'
+    liItem.style.listStyleType = styleTypeOfUlMarksListDropdown
+
+    ulWrapper.appendChild(liItem)
+  }
 
   closeModalUl.classList.add('close')
   closeModalUl.dataset.dismiss = 'modal'
@@ -82,22 +117,8 @@ function listUlCreatingFunction(event) {
   textStylePanel.style.display = 'block'
   textEditorBlock.style.display = 'none'
   textEditorPanel.style.display = 'none'
-
-  textShowingBlock.appendChild(ulWrapper)
-  for(let i = 0; i < document.querySelector('#countOfLiItems').value.length; i++) {
-    ulLiItem.innerText = 'Lorem, example text for list'
-    ulLiItem.style.listStyleType = event.target.value
-  }
-  ulWrapper.appendChild(ulLiItem)
-
-  styleTypeOfUlMarksListDropdown.addEventListener('change', onClickByUlTypeOfMark)
 }
 
 createUlBtn.addEventListener('click', listUlCreatingFunction)
-
-
-function listUlCreatingResetFunction() {
-
-}
 
 resetUlCreationFormBtn.addEventListener('click', listUlCreatingResetFunction)

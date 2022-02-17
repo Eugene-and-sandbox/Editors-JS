@@ -25,32 +25,16 @@ html body {
   font-weight: bold;
 }
 
-.text-bold-toggle {
-  font-weight: none;
-}
-
 .text-italic {
   font-style: italic;
-}
-
-.text-italic-toggle {
-  font-style: normal;
 }
 
 .text-underline {
   text-decoration: underline;
 }
 
-.text-underline-toggle {
-  text-decoration: none;
-}
-
 .text-strikethrough {
   text-decoration: line-through;
-}
-
-.text-strikethrough-toggle {
-  text-decoration: none;
 }
 
 /* Buttons Styles */

@@ -77,3 +77,12 @@ function backgroundImageVisualization(image) {
 backgroundImages.forEach(image => {
   choiceImageTab.appendChild(backgroundImageVisualization(image))
 })
+
+// Upload file and set background image
+const fileUploadForm = document.querySelector('#fileUploadForm'),
+      fileUploadBtn = document.querySelector('#fileUploadBtn').addEventListener('click', function() {
+        const fileInput = document.querySelector('#fileInput').files[0]
+
+        textShowingBlock.style.backgroundColor = 'none'
+        textShowingBlock.style.backgroundImage = 'url("' + fileInput.name + '")'
+      })

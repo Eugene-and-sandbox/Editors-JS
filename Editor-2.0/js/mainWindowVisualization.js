@@ -3,22 +3,12 @@ const textShowingBlock = document.querySelector('#textShowingBlock'),
       textEditorBlock = document.querySelector('#textEditorBlock'),
       textStylePanel = document.querySelector('#textStylePanel'),
       textEditorPanel = document.querySelector('#textEditorPanel'),
-      pickerTab = document.querySelector('#color-picker-tab'),
-      pickerTabShower = document.querySelector('#picker-tab'),
-      imageTab = document.querySelector('#choice-image-tab'),
-      imageTabShower = document.querySelector('#image-tab')
+      setColorsActive = document.querySelector('#setColorsActive'),
+      setImagesActive = document.querySelector('#setImagesActive')
 
 
 const showTextEditorPanelBtn = document.createElement('input'),
-      saveTextChangesBtn = document.querySelector('#saveTextChangesBtn'),
-      showColorPickerBtn = document.querySelector('#showColorPickerBtn').onclick = function() {
-        pickerTab.classList.add('active')
-        pickerTabShower.classNAme = 'show active'
-      },
-      showImagePickerBtn = document.querySelector('#showImagePickerBtn').onclick = function() {
-        imageTab.classList.add('active')
-        imageTabShower.className = 'show active'
-      }
+      saveTextChangesBtn = document.querySelector('#saveTextChangesBtn')
 
 
 showTextEditorPanelBtn.type = 'button'

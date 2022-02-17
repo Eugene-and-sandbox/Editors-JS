@@ -71,10 +71,10 @@
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="fontSizeGroup">
                   </div>
                 </div>
-                <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#staticBackdrop" id="showColorPickerBtn">
+                <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#pickers" id="showColorPickerBtn">
                   <i class="bi bi-palette-fill"></i>
                 </button>
-                <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#staticBackdrop" id="showImagePickerBtn">
+                <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#pickers" id="showImagePickerBtn">
                   <i class="bi bi-image-fill"></i>
                 </button>
               </div>
@@ -137,7 +137,103 @@
 
   <!-- MODALS -->
   <!-- Color Picker, Image and Files Modal -->
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="pickers" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="pickers" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Colors</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Images</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Files</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" id="setColorsActive">
+              <div class="cells-wrapper mt-3" id="color-picker-tab-cells"></div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" id="setImagesActive">
+              <div class="cells-wrapper mt-3" id="choice-image-tab-cells"></div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <form action="" class="mt-4 mb-2" id="fileUploadForm">
+                <div class="custom-file">
+                  <!-- <input type="file" class="custom-file-input" id="fileInput" multiple>
+                  <label class="custom-file-label" for="customFile">Choose file...</label> -->
+                  <input type="file" id="fileInput" multiple>
+                  <button type="button" class="btn btn-secondary mt-2" id="fileUploadBtn">Set background</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- <div class="modal fade" id="imagePicker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Colors</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Images</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Files</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="cells-wrapper mt-3" id="color-picker-tab-cells"></div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="cells-wrapper mt-3" id="choice-image-tab-cells"></div </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Button trigger modal -->
+  <!-- <div class="modal fade" id="colorPicker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Choose background color or image</h5>
+        </div>
+        <div class="modal-body">
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -172,7 +268,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- User Login Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -271,7 +367,7 @@
                       <div class="col-md-6">
                         <label class="col-form-label">Color of border:</label>
                         <div class="dropdown">
-                          <select class="form-control" name="">
+                          <select class="form-control" name="" id="styleOfBorderColorDropdown">
                             <option value="red">red</option>
                             <option value="black">black</option>
                             <option value="orange">orange</option>
@@ -318,11 +414,11 @@
               <div class="dropdown">
                 <label class="col-form-label">Type mark of list:</label>
                 <select class="form-control" name="" id="styleTypeOfOlMarksListDropdown" placeholder="choose OL type mark">
-                  <option value="1">1</option>
-                  <option value="l">l</option>
-                  <option value="i">i</option>
-                  <option value="A">A</option>
-                  <option value="a">a</option>
+                  <option value="decimal">1</option>
+                  <option value="upper-roman">l</option>
+                  <option value="lower-roman">i</option>
+                  <option value="upper-alpha">A</option>
+                  <option value="lower-alpha">a</option>
                 </select>
               </div>
             </div>
