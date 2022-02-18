@@ -16,12 +16,6 @@ showTextEditorPanelBtn.id = 'showTextEditorPanelBtn'
 showTextEditorPanelBtn.className = 'btn style-control-buttons'
 showTextEditorPanelBtn.value = '</>'
 switchTextViewerOnTextEditor.appendChild(showTextEditorPanelBtn)
-//
-// saveTextChangesBtn.type = 'image'
-// saveTextChangesBtn.id = 'saveTextChangesBtn'
-// saveTextChangesBtn.src = 'https://cdn1.iconfinder.com/data/icons/computer-hardware-and-accessories-glyph-style/320/disket-512.png'
-// saveTextChangesBtn.style.width = '2.5rem'
-// textEditorPanel.appendChild(saveTextChangesBtn)
 
 
 function ShowTextBlock() {
@@ -50,7 +44,7 @@ function saveTextChangesFunction() {
 
 
 
-// ShowEditorBlock()
+// ShowEditorBlock
 showTextEditorPanelBtn.addEventListener('click', ShowEditorBlock)
 
 // Show Text Viewer Block

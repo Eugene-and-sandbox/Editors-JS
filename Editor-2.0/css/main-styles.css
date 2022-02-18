@@ -38,25 +38,6 @@ html body {
 }
 
 /* Buttons Styles */
-/* .buttons-collection-wrappers-styles {
-  width: 15%;
-  border-radius: .25rem;
-}
-
-.buttons-style-styles {
-  min-width: 2.18rem;
-  border: .1rem solid #EFEFEF;
-  border-radius: .25rem;
-}
-
-.buttons-style-styles:hover {
-  border: .1rem solid #90a4ae;
-  transition: .5s;
-}
-
-.bottons-group-border {
-  border: .1rem solid #EFEFEF;
-} */
 .style-control-buttons {
   border: .1rem solid #EFEFEF;
   background: #EFEFEF;

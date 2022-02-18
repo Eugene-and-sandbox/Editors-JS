@@ -2,8 +2,7 @@
 const tableCreationForm = document.querySelector('#tableCreationForm')
 
 
-const resetTableCreationFormBtn = document.querySelector('#resetTableCreationFormBtn'),
-  creteTableBtn = document.querySelector('#creteTableBtn'),
+const creteTableBtn = document.querySelector('#creteTableBtn'),
   closeTableModal = document.querySelector('#closeTableModal')
 
 
@@ -53,7 +52,6 @@ creteTableBtn.addEventListener('click', createTableFunction)
 
 // Create Ol
 const olCreationForm = document.querySelector('#olCreationForm'),
-  resetOlCreationFormBtn = document.querySelector('#resetOlCreationFormBtn'),
   creteOlBtn = document.querySelector('#creteOlBtn')
 
 const closeModalOl = document.querySelector('#closeModalOl')
@@ -88,8 +86,7 @@ creteOlBtn.addEventListener('click', listOlCreatingFunction)
 
 
 // Create Ul
-const ulCreationForm = document.querySelector('#ulCreationForm'),
-  resetUlCreationFormBtn = document.querySelector('#resetUlCreationFormBtn'),
+const styleTypeOfUlMarksListDropdown= document.querySelector('#styleTypeOfUlMarksListDropdown'),    ulCreationForm = document.querySelector('#ulCreationForm'),
   creteUlBtn = document.querySelector('#creteUlBtn')
 
 const closeModalUl = document.querySelector('#closeModalUl')
@@ -97,8 +94,7 @@ const closeModalUl = document.querySelector('#closeModalUl')
 const ulWrapper = document.createElement('ul')
 
 function listUlCreatingFunction(event) {
-  const styleTypeOfUlMarksListDropdown = document.querySelector('#styleTypeOfUlMarksListDropdown').value,
-    countOfLiItems = document.querySelector('#countOfLiItems').value
+  const countOfLiItems = document.querySelector('#countOfLiItems').value
 
   textShowingBlock.appendChild(ulWrapper)
 
@@ -120,5 +116,3 @@ function listUlCreatingFunction(event) {
 }
 
 createUlBtn.addEventListener('click', listUlCreatingFunction)
-
-resetUlCreationFormBtn.addEventListener('click', listUlCreatingResetFunction)

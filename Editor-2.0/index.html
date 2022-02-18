@@ -168,8 +168,6 @@
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
               <form action="" class="mt-4 mb-2" id="fileUploadForm">
                 <div class="custom-file">
-                  <!-- <input type="file" class="custom-file-input" id="fileInput" multiple>
-                  <label class="custom-file-label" for="customFile">Choose file...</label> -->
                   <input type="file" id="fileInput" multiple>
                   <button type="button" class="btn btn-secondary mt-2" id="fileUploadBtn">Set background</button>
                 </div>
@@ -183,116 +181,25 @@
   </div>
 
 
-  <!-- <div class="modal fade" id="imagePicker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Colors</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Images</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Files</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <div class="cells-wrapper mt-3" id="color-picker-tab-cells"></div>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="cells-wrapper mt-3" id="choice-image-tab-cells"></div </div>
-              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- Button trigger modal -->
-  <!-- <div class="modal fade" id="colorPicker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Choose background color or image</h5>
-        </div>
-        <div class="modal-body">
-
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-  <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Choose background color or image</h5>
-        </div>
-        <div class="modal-body">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="color-picker-tab" data-toggle="tab" href="#picker-tab" role="tab" aria-controls="color-picker-tab-cells" aria-selected="true">Colors</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="choice-image-tab" data-toggle="tab" href="#image-tab" role="tab" aria-controls="choice-image-tab-cells" aria-selected="false">Images</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="choice-file-tab" data-toggle="tab" href="#choice-file-tab-field" role="tab" aria-controls="choice-file-tab-field" aria-selected="false">Files</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show" id="picker-tab" role="tabpanel" aria-labelledby="home-tab">
-              <div class="cells-wrapper mt-3" id="color-picker-tab-cells"></div>
-            </div>
-            <div class="tab-pane fade " id="image-tab" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="cells-wrapper mt-3" id="choice-image-tab-cells"></div>
-            </div>
-            <div class="tab-pane fade" id="choice-file-tab-field" role="tabpanel" aria-labelledby="contact-tab">
-              <button type="button" class="btn btn-primary mt-3">Understood</button>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <!-- User Login Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title text-center" id="exampleModalLabel"><span class="text-center">Sigh In</span></h5>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <input type="text" class="form-control" id="userName" placeholder="Login Here..">
+              <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Login Here.." pattern="^[a-zA-Z]">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <small id="emailError" style="display: none">Fix it!</small>
             </div>
-            <div class=" form-group">
-              <input type="password" class="form-control" id="userPassword" value="" placeholder="Password here..">
+            <div class="form-group">
+              <input type="password" class="form-control" id="userPassword" placeholder="Password here..">
             </div>
+            <button type="submit" class="btn btn-secondary btn-block" id="loginBtn">Log In</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
         </div>
       </div>
     </div>
@@ -484,12 +391,12 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
   <script src="js/mainWindowVisualization.js" charset="utf-8"></script>
-  <script src="js/bootstrap-validate.js"></script>
-  <script src="js/bootstrapCustomValidation.js" charset="utf-8"></script>
   <script src="js/textSettings.js" charset="utf-8"></script>
   <script src="js/textStyleAndTextPositionFunctions.js" charset="utf-8"></script>
   <script src="js/backroundStyles.js" charset="utf-8"></script>
   <script src="js/creationTableAndLists.js" charset="utf-8"></script>
+  <script src="js/formsValidation.js" charset="utf-8"></script>
+  <script src="js/formsReset.js" charset="utf-8"></script>
 </body>
 
 </html>
