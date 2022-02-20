@@ -2,4 +2,4 @@
 2. After login/logout imitation, and after it again you opening the login window, the login window has broken styles and will close when clicking on this one
 3. Password input field validating even when the input field is empty
 4. Doesn`t work strikethrough button. Styles added, checked
-5. User Authentication Form doesn`t checking if login and/or password are not correct. If there are login and/or password are with mistakes, User Authentication Form will closed
+5. User Authentication Form doesn`t check if login and/or password are not correct. If login and/or password with mistakes, the User Authentication Form will be simply closed
