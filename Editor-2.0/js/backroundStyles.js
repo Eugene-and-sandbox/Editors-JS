@@ -54,6 +54,7 @@ const backgroundImages = [
 
 
 function onClickOnBackgroundImageCell(event) {
+  textShowingBlock.backgroundColor = 'none'
   textShowingBlock.style.backgroundImage = 'url("' + event.target.src + '")'
   console.log(textShowingBlock)
 }
@@ -80,9 +81,13 @@ backgroundImages.forEach(image => {
 
 // Upload file and set background image
 const fileUploadForm = document.querySelector('#fileUploadForm'),
-      fileUploadBtn = document.querySelector('#fileUploadBtn').addEventListener('click', function() {
-        const fileInput = document.querySelector('#fileInput').files[0]
+      fileInput = document.querySelector('#fileInput').addEventListener('change', function() {
+        const fileList = this.files
+        let urlCreator = window.URL || windows.webbkitURL,
+            imageUrl = urlCreator.createObjectURL(fileList[0])
 
         textShowingBlock.style.backgroundColor = 'none'
-        textShowingBlock.style.backgroundImage = 'url("' + fileInput.name + '")'
-      })
+        textShowingBlock.style.backgroundImage = 'url(' + imageUrl + ')'
+        textShowingBlock.style.backgroundRepeat = 'no-repeat'
+        textShowingBlock.style.backgroundSize = '100%'
+      }, false)

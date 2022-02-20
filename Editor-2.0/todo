@@ -1,5 +1,4 @@
-1. Bold працює, а решта - ні
-2. Color Picker перестав завантажуватись одразу
-3. Image Picker може завантадити одрайзу й Color Picker
-4. Як бутсраповські div, а чи li змусити працювати, яу select та option?
-5. "Criate UI" and "Create table" modals don`t hide after table crating as "Create Ol"
+1. After clicking on the "Create list" or "Create table" buttons, the modal window doesn`t hide after table crating. Function added. Checked. Part of code that was commented, working correctly
+2. After login/logout imitation, and after it again you opening the login window, the login window has broken styles and will close when clicking on this one
+3. Password input field validating even when the input field is empty
+4. Doesn`t work strikethrough button. Styles added, checked

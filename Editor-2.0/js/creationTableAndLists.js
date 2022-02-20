@@ -7,43 +7,49 @@ const creteTableBtn = document.querySelector('#creteTableBtn'),
 
 
 function createTableFunction() {
-  const tableTrCount = document.querySelector('#tableTrCount').value,
-    tableTdCount = document.querySelector('#tableTdCount').value,
-    tableTdWidth = document.querySelector('#tableTdWidth').value,
-    tableTdHeight = document.querySelector('#tableTdHeight').value,
-    tableBorderWidth = document.querySelector('#tableBorderWidth').value,
-    styleOfBorderDropdown = document.querySelector('#styleOfBorderDropdown').value,
-    styleOfBorderColorDropdown = document.querySelector('#styleOfBorderColorDropdown').value
+  if(tableTrCount.value === '' || tableTrCount.value === ' ' ||
+    tableTdCount.value === '' || tableTdCount.value === ' ' ||
+    tableTdWidth.value === '' || tableTdWidth.value === ' ' ||
+    tableTdHeight.value === '' || tableTdHeight.value === ' ' ||
+    tableBorderWidth.value === '' || tableBorderWidth.value === ' ') {} else {
+    const tableTrCount = document.querySelector('#tableTrCount').value,
+      tableTdCount = document.querySelector('#tableTdCount').value,
+      tableTdWidth = document.querySelector('#tableTdWidth').value,
+      tableTdHeight = document.querySelector('#tableTdHeight').value,
+      tableBorderWidth = document.querySelector('#tableBorderWidth').value,
+      styleOfBorderDropdown = document.querySelector('#styleOfBorderDropdown').value,
+      styleOfBorderColorDropdown = document.querySelector('#styleOfBorderColorDropdown').value
 
-  const tableWrapper = document.createElement('table')
-  for (let i = 0; i < tableTrCount; i++) {
-    const trItem = document.createElement('tr')
+    const tableWrapper = document.createElement('table')
 
-    for (let j = 0; j < tableTdCount; j++) {
-      const tdItem = document.createElement('td')
 
-      tdItem.style.padding = '.2rem .2rem .2rem'
-      tdItem.style.width = tableTdWidth + 'px'
-      tdItem.style.height = tableTdHeight + 'px'
-      tdItem.style.border = tableBorderWidth + 'px' + ' ' + styleOfBorderDropdown + ' ' + styleOfBorderColorDropdown
-      tdItem.innerText = 'TD'
+    for (let i = 0; i < tableTrCount; i++) {
+      const trItem = document.createElement('tr')
 
-      trItem.appendChild(tdItem)
+      for (let j = 0; j < tableTdCount; j++) {
+        const tdItem = document.createElement('td')
+
+        tdItem.style.padding = '.2rem .2rem .2rem'
+        tdItem.style.width = tableTdWidth + 'px'
+        tdItem.style.height = tableTdHeight + 'px'
+        tdItem.style.border = tableBorderWidth + 'px' + ' ' + styleOfBorderDropdown + ' ' + styleOfBorderColorDropdown
+        tdItem.innerText = 'TD'
+
+        trItem.appendChild(tdItem)
+      }
+
+      tableWrapper.appendChild(trItem)
     }
 
-    tableWrapper.appendChild(trItem)
+    textShowingBlock.appendChild(tableWrapper)
+
+    closeTableModal.classList.add('close')
+    closeTableModal.dataset.dismiss = 'modal'
+    textShowingBlock.style.display = 'block'
+    textStylePanel.style.display = 'block'
+    textEditorBlock.style.display = 'none'
+    textEditorPanel.style.display = 'none'
   }
-
-  textShowingBlock.appendChild(tableWrapper)
-
-
-
-  closeTableModal.classList.add('close')
-  closeTableModal.dataset.dismiss = 'modal'
-  textShowingBlock.style.display = 'block'
-  textStylePanel.style.display = 'block'
-  textEditorBlock.style.display = 'none'
-  textEditorPanel.style.display = 'none'
 }
 
 
@@ -60,26 +66,29 @@ const olWrapper = document.createElement('ol')
 
 
 function listOlCreatingFunction() {
-  const styleTypeOfOlMarksListDropdown = document.querySelector('#styleTypeOfOlMarksListDropdown').value,
-    listLiCount = document.querySelector('#listLiCount').value
+  if(listOlLiCount.value === '' || listOlLiCount.value === ' ') {}
+  else {
+    const styleTypeOfOlMarksListDropdown = document.querySelector('#styleTypeOfOlMarksListDropdown').value,
+      listOlLiCount = document.querySelector('#listOlLiCount').value
 
-  textShowingBlock.appendChild(olWrapper)
+    textShowingBlock.appendChild(olWrapper)
 
-  for (let i = 0; i < listLiCount; i++) {
-    const liItem = document.createElement('li')
+    for (let i = 0; i < listOlLiCount; i++) {
+      const liItem = document.createElement('li')
 
-    liItem.innerText = 'Lorem, example text for list'
-    liItem.style.listStyleType = styleTypeOfOlMarksListDropdown
+      liItem.innerText = 'Lorem, example text for list'
+      liItem.style.listStyleType = styleTypeOfOlMarksListDropdown
 
-    olWrapper.appendChild(liItem)
+      olWrapper.appendChild(liItem)
+    }
+
+    closeModalOl.classList.add('close')
+    closeModalOl.dataset.dismiss = 'modal'
+    textShowingBlock.style.display = 'block'
+    textStylePanel.style.display = 'block'
+    textEditorBlock.style.display = 'none'
+    textEditorPanel.style.display = 'none'
   }
-
-  closeModalOl.classList.add('close')
-  closeModalOl.dataset.dismiss = 'modal'
-  textShowingBlock.style.display = 'block'
-  textStylePanel.style.display = 'block'
-  textEditorBlock.style.display = 'none'
-  textEditorPanel.style.display = 'none'
 }
 
 creteOlBtn.addEventListener('click', listOlCreatingFunction)
@@ -93,26 +102,29 @@ const closeModalUl = document.querySelector('#closeModalUl')
 
 const ulWrapper = document.createElement('ul')
 
-function listUlCreatingFunction(event) {
-  const countOfLiItems = document.querySelector('#countOfLiItems').value
+function listUlCreatingFunction() {
+  if(listUlLiCount.value === '' || listUlLiCount.value === ' ') {}
+  else {
+    const listUlLiCount = document.querySelector('#listUlLiCount').value
 
-  textShowingBlock.appendChild(ulWrapper)
+    textShowingBlock.appendChild(ulWrapper)
 
-  for (let i = 0; i < countOfLiItems; i++) {
-    const liItem = document.createElement('li')
+    for (let i = 0; i < listUlLiCount; i++) {
+      const liItem = document.createElement('li')
 
-    liItem.innerText = 'Lorem, example text for list'
-    liItem.style.listStyleType = styleTypeOfUlMarksListDropdown
+      liItem.innerText = 'Lorem, example text for list'
+      liItem.style.listStyleType = styleTypeOfUlMarksListDropdown
 
-    ulWrapper.appendChild(liItem)
+      ulWrapper.appendChild(liItem)
+    }
+
+    closeModalUl.classList.add('close')
+    closeModalUl.dataset.dismiss = 'modal'
+    textShowingBlock.style.display = 'block'
+    textStylePanel.style.display = 'block'
+    textEditorBlock.style.display = 'none'
+    textEditorPanel.style.display = 'none'
   }
-
-  closeModalUl.classList.add('close')
-  closeModalUl.dataset.dismiss = 'modal'
-  textShowingBlock.style.display = 'block'
-  textStylePanel.style.display = 'block'
-  textEditorBlock.style.display = 'none'
-  textEditorPanel.style.display = 'none'
 }
 
 createUlBtn.addEventListener('click', listUlCreatingFunction)

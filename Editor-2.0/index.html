@@ -79,9 +79,9 @@
                 </button>
               </div>
             </div>
-            <div class="col">
-              <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
-                <i class="bi bi-lock-fill"></i>
+            <div class="col" id="divThatIncludeLoginBtn">
+              <button type="button" class="btn style-control-buttons" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" id='thisLoginButton'>
+                <i class="bi bi-lock-fill" id='imgLock'></i>
               </button>
             </div>
           </div>
@@ -169,7 +169,6 @@
               <form action="" class="mt-4 mb-2" id="fileUploadForm">
                 <div class="custom-file">
                   <input type="file" id="fileInput" multiple>
-                  <button type="button" class="btn btn-secondary mt-2" id="fileUploadBtn">Set background</button>
                 </div>
               </form>
             </div>
@@ -189,16 +188,26 @@
           <h5 class="modal-title text-center" id="exampleModalLabel"><span class="text-center">Sigh In</span></h5>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Login Here.." pattern="^[a-zA-Z]">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              <small id="emailError" style="display: none">Fix it!</small>
+          <form class="needs-validation" id="userLoginForm" novalidate>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <input type="text" class="form-control" id="userName" placeholder="Login Here.." required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div class="invalid-tooltip">
+                  Enter your Username here (Login: admin, password: admin)!
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="userPassword" placeholder="Password here..">
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <input type="password" class="form-control" id="userPassword" placeholder="Password Here..">
+              </div>
             </div>
-            <button type="submit" class="btn btn-secondary btn-block" id="loginBtn">Log In</button>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <button type="submit" class="btn btn-secondary btn-block" id="loginBtn">Log In</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
@@ -216,82 +225,75 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id="tableCreationForm">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Count TR:</label>
-                    <input type="text" class="form-control" id="tableTrCount" placeholder="Type here..">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Count TD:</label>
-                    <input type="text" class="form-control" id="tableTdCount" placeholder="Type here..">
-                  </div>
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">Count TR:</label>
+                <input type="text" class="form-control" id="tableTrCount" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a number of TR`s!
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Width of TD:</label>
-                    <input type="text" class="form-control" id="tableTdWidth" placeholder="Type here..">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Height of TD:</label>
-                    <input type="text" class="form-control" id="tableTdHeight" placeholder="Type here..">
-                  </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip02">Count TD:</label>
+                <input type="text" class="form-control" id="tableTdCount" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a number of TD`s!
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Width of border:</label>
-                    <input type="text" class="form-control" id="tableBorderWidth" placeholder="Type here..">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="dropdown">
-                          <label class="col-form-label">Style of border:</label>
-                          <select class="form-control" name="" id="styleOfBorderDropdown">
-                            <option value="dotted">dotted</option>
-                            <option value="dashed">dashed</option>
-                            <option value="solid">solid</option>
-                            <option value="double">double</option>
-                            <option value="groove">groove</option>
-                            <option value="ridge">ridge</option>
-                            <option value="inset">inset</option>
-                            <option value="outset">outset</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="col-form-label">Color of border:</label>
-                        <div class="dropdown">
-                          <select class="form-control" name="" id="styleOfBorderColorDropdown">
-                            <option value="red">red</option>
-                            <option value="black">black</option>
-                            <option value="orange">orange</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">Width of TD:</label>
+                <input type="text" class="form-control" id="tableTdWidth" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a width size of TD!
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-danger btn-block" id="resetTableCreationFormBtn">Reset</button>
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip02">Height of TD:</label>
+                <input type="text" class="form-control" id="tableTdHeight" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a height size of TD!
                 </div>
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-success btn-block" id="creteTableBtn">Create table</button>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip03">Width of border:</label>
+                <input type="text" class="form-control" id="tableBorderWidth" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a width of TD border!
                 </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationTooltip04">Style of border:</label>
+                <select class="form-control custom-select" name="" id="styleOfBorderDropdown">
+                  <option value="dotted">dotted</option>
+                  <option value="dashed">dashed</option>
+                  <option value="solid">solid</option>
+                  <option value="double">double</option>
+                  <option value="groove">groove</option>
+                  <option value="ridge">ridge</option>
+                  <option value="inset">inset</option>
+                  <option value="outset">outset</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationTooltip05">Color of border:</label>
+                <select class="form-control custom-select" name="" id="styleOfBorderColorDropdown">
+                  <option value="red">red</option>
+                  <option value="black">black</option>
+                  <option value="orange">orange</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <button type="button" class="btn btn-danger btn-block" id="resetTableCreationFormBtn">Reset form</button>
+              </div>
+              <div class="col-md-6 mb-3">
+                <button type="submit" class="btn btn-success btn-block" id="creteTableBtn">Create table</button>
               </div>
             </div>
           </form>
@@ -312,7 +314,39 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id="olCreationForm">
+          <form class="needs-validation" id="olCreationForm" novalidate>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationTooltip03">Count li item:</label>
+                <input type="text" class="form-control" id="listOlLiCount" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a number of li`s!
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationTooltip05">Type mark of list:</label>
+                <select class="form-control" name="" id="styleTypeOfOlMarksListDropdown" placeholder="choose OL type mark">
+                  <option value="decimal">1</option>
+                  <option value="upper-roman">l</option>
+                  <option value="lower-roman">i</option>
+                  <option value="upper-alpha">A</option>
+                  <option value="lower-alpha">a</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <button type="button" class="btn btn-danger btn-block" id="resetOlCreationFormBtn">Reset form</button>
+              </div>
+              <div class="col-md-6 mb-3">
+                <button type="submit" class="btn btn-success btn-block" id="creteOlBtn">Create list</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- <form id="olCreationForm">
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Count li item:</label>
               <input type="text" class="form-control" id="listLiCount" placeholder="Type here..">
@@ -339,7 +373,7 @@
                 <button type="button" class="btn btn-success btn-block" id="creteOlBtn" class="close" data-dismiss="modal" aria-label="Close">Create table</button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -356,14 +390,19 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id="ulCreationForm">
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Count li item:</label>
-              <input type="text" class="form-control" id="countOfLiItems" placeholder="Type here.." value="">
+          <form class="needs-validation" id="ulCreationForm" novalidate>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationTooltip03">Count li item:</label>
+                <input type="text" class="form-control" id="listUlLiCount" placeholder="Type here.." required>
+                <div class="invalid-tooltip">
+                  Enter a number of li`s!
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <div class="dropdown">
-                <label class="col-form-label">Type mark of list:</label>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationTooltip05">Type mark of list:</label>
                 <select class="form-control" name="" id="styleTypeOfUlMarksListDropdown" placeholder="choose OL type mark">
                   <option value="circle">circle</option>
                   <option value="disc">disc</option>
@@ -371,17 +410,15 @@
                 </select>
               </div>
             </div>
-          </form>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6">
-                <button type="button" class="btn btn-danger btn-block" id="resetUlCreationFormBtn">Reset</button>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <button type="button" class="btn btn-danger btn-block" id="resetUlCreationFormBtn">Reset form</button>
               </div>
-              <div class="col-md-6">
-                <button type="button" class="btn btn-success btn-block" id="createUlBtn">Create table</button>
+              <div class="col-md-6 mb-3">
+                <button type="submit" class="btn btn-success btn-block" id="createUlBtn">Create list</button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -395,8 +432,29 @@
   <script src="js/textStyleAndTextPositionFunctions.js" charset="utf-8"></script>
   <script src="js/backroundStyles.js" charset="utf-8"></script>
   <script src="js/creationTableAndLists.js" charset="utf-8"></script>
-  <script src="js/formsValidation.js" charset="utf-8"></script>
   <script src="js/formsReset.js" charset="utf-8"></script>
+  <script src="js/userLoginValidation.js" charset="utf-8"></script>
+
+  <script>
+    // Table, Ol, Ul simpple validation by Bootstrap
+    (function() {
+      'use strict'
+
+      var forms = document.querySelectorAll('.needs-validation')
+
+      Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+          form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
 </body>
 
 </html>
